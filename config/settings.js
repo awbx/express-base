@@ -2,6 +2,9 @@
 
 // initialize common config
 const commonConfig = {
+    corsOptions: {
+        origin: "*", // TODO : change it in production !
+    },
     app: {
         port: parseInt(process.env.PORT) || 5000,
         debug: process.env.DEBUGGER.toLowerCase() === "true" ? true : false,
