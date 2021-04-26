@@ -1,0 +1,19 @@
+{
+  "name": "express-base",
+  "version": "0.1.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awbx/express-base.git"
+  },
+  "author": "Abdelhadi Sabani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awbx/express-base/issues"
+  },
+  "homepage": "https://github.com/awbx/express-base#readme"
+}
