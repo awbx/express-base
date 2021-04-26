@@ -5,6 +5,7 @@ const commonConfig = {
     app: {
         port: parseInt(process.env.PORT) || 5000,
         debug: process.env.DEBUGGER.toLowerCase() === "true" ? true : false,
+        logger_format: process.env.LOGGER_FORMAT || "combined",
     },
 };
 
