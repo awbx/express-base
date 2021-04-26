@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "dev": "nodemon --config config/nodemon.json . --watch",
+        "pro": "node .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
