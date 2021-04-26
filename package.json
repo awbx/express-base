@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/awbx/express-base/issues"
   },
-  "homepage": "https://github.com/awbx/express-base#readme"
+  "homepage": "https://github.com/awbx/express-base#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
