@@ -1,27 +1,28 @@
 {
-  "name": "express-base",
-  "version": "0.1.1",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/awbx/express-base.git"
-  },
-  "author": "Abdelhadi Sabani",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/awbx/express-base/issues"
-  },
-  "homepage": "https://github.com/awbx/express-base#readme",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  }
+    "name": "express-base",
+    "version": "0.1.1",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon --config config/nodemon.json . --watch",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/awbx/express-base.git"
+    },
+    "author": "Abdelhadi Sabani",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/awbx/express-base/issues"
+    },
+    "homepage": "https://github.com/awbx/express-base#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
 }
