@@ -22,5 +22,7 @@ app.set("debugger", debug);
 
 // initialize middlewares
 app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 if (debug) app.use(logger(logger_format));
 module.exports = app;
