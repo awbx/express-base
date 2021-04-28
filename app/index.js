@@ -8,7 +8,7 @@ const cors = require("cors");
 
 // inlcude .env  variables
 require("dotenv").config("../.env");
-const env = process.env.ENV;
+const env = process.env.NODE_ENV;
 const {
     name,
     corsOptions,
