@@ -1,4 +1,5 @@
 "use strict";
+const errorHandler = require("./middlewares/errorHandler");
 const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
@@ -37,4 +38,8 @@ app.use("*", (req, res, next) => {
         next(err);
     }
 });
+
+// error handler
+app.use(errorHandler);
+
 module.exports = app;
