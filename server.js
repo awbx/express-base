@@ -21,7 +21,7 @@ server.on("listening", () => {
 // handle error
 server.on("error", (err) => {
     if (err.syscall !== "listen") throw err;
-    switch (error.code) {
+    switch (err.code) {
         case "EACCES":
             console.error(`${PORT} is requires elevated privileges`);
             process.exit(1);
