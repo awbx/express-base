@@ -1,4 +1,5 @@
 "use strict";
+const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
 const helmet = require("helmet");
@@ -27,4 +28,13 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 if (debug) app.use(logger(logger_format));
+
+// handle 404 error
+app.use("*", (req, res, next) => {
+    try {
+        throw createError.NotFound(); // throw an error to the catch
+    } catch (err) {
+        next(err);
+    }
+});
 module.exports = app;
