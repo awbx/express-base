@@ -17,6 +17,7 @@ const devConfig = { ...commonConfig, name: "development" };
 
 // initialize testing config
 const testConfig = { ...commonConfig, name: "testing" };
+testConfig.app.debug = false;
 
 // initialize production config
 const proConfig = {
