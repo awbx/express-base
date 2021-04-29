@@ -22,10 +22,8 @@ const testConfig = { ...commonConfig, name: "testing" };
 const proConfig = {
     ...commonConfig,
     name: "production",
-    app: {
-        port: parseInt(process.env.PORT) || 8080,
-    },
 };
+proConfig.app.port = parseInt(process.env.PORT) || 8080;
 
 // arrange for exporting
 const config = new Map();
