@@ -13,15 +13,15 @@ const commonConfig = {
 };
 
 // initialize development config
-const devConfig = { ...commonConfig, name: "development" };
+const devConfig = { ...JSON.parse(JSON.stringify(commonConfig)), name: "development" };
 
 // initialize testing config
-const testConfig = { ...commonConfig, name: "testing" };
+const testConfig = { ...JSON.parse(JSON.stringify(commonConfig)), name: "testing" };
 testConfig.app.debug = false;
 
 // initialize production config
 const proConfig = {
-    ...commonConfig,
+    ...JSON.parse(JSON.stringify(commonConfig)),
     name: "production",
 };
 proConfig.app.port = parseInt(process.env.PORT) || 8080;
