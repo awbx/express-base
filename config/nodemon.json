@@ -1,3 +1,4 @@
 {
-    "verbose": false
+    "verbose": false,
+    "ignore": ["node_modules/*"]
 }
