@@ -5,6 +5,7 @@ const express = require("express");
 const logger = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
+const path = require("path");
 
 // inlcude .env  variables
 require("dotenv").config("../.env");
@@ -28,6 +29,9 @@ app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+    express.static(path.join(__dirname, "./public"), { dotfiles: "allow" })
+);
 if (debug) app.use(logger(logger_format));
 
 // handle 404 error
