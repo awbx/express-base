@@ -7,6 +7,9 @@ const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
 
+// inlcude routers
+const homeRouter = require("./routes/homeRouter");
+
 // inlcude .env  variables
 require("dotenv").config("../.env");
 const env = process.env.NODE_ENV;
@@ -33,6 +36,9 @@ app.use(
     express.static(path.join(__dirname, "./public"), { dotfiles: "allow" })
 );
 if (debug) app.use(logger(logger_format));
+
+// registering route
+app.use("/home", homeRouter);
 
 // handle 404 error
 app.use("*", (req, res, next) => {
