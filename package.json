@@ -7,7 +7,9 @@
         "dev": "nodemon --config config/nodemon.json . --watch",
         "pro": "node .",
         "test": "export NODE_ENV=testing && jest",
-        "lint": "eslint --ext \".js\" --ignore-path .gitignore ."
+        "lint": "eslint . --ignore-path .gitignore",
+        "lint:fix": "eslint . --ignore-path .gitignore --fix",
+        "predev": "eslint . --ignore-path .gitignore"
     },
     "repository": {
         "type": "git",
