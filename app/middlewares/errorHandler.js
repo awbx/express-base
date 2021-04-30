@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 module.exports = (err, req, res, next) => {
     const env = req.app.get("env");
     const isDevOrTest = env === "development" || env === "testing";
