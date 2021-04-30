@@ -1,22 +1,26 @@
-"use strict";
-
 // initialize common config
 const commonConfig = {
     corsOptions: {
         origin: "*", // TODO : change it in production !
     },
     app: {
-        port: parseInt(process.env.PORT) || 5000,
-        debug: process.env.DEBUGGER?.toLowerCase() === "true" ? true : false,
-        logger_format: process.env.LOGGER_FORMAT || "combined",
+        port: parseInt(process.env.PORT, 10) || 5000,
+        debug: process.env.DEBUGGER?.toLowerCase() === "true",
+        loggerFormat: process.env.LOGGER_FORMAT || "combined",
     },
 };
 
 // initialize development config
-const devConfig = { ...JSON.parse(JSON.stringify(commonConfig)), name: "development" };
+const devConfig = {
+    ...JSON.parse(JSON.stringify(commonConfig)),
+    name: "development",
+};
 
 // initialize testing config
-const testConfig = { ...JSON.parse(JSON.stringify(commonConfig)), name: "testing" };
+const testConfig = {
+    ...JSON.parse(JSON.stringify(commonConfig)),
+    name: "testing",
+};
 testConfig.app.debug = false;
 
 // initialize production config
@@ -24,7 +28,7 @@ const proConfig = {
     ...JSON.parse(JSON.stringify(commonConfig)),
     name: "production",
 };
-proConfig.app.port = parseInt(process.env.PORT) || 8080;
+proConfig.app.port = parseInt(process.env.PORT, 10) || 8080;
 
 // arrange for exporting
 const config = new Map();

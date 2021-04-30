@@ -1,7 +1,5 @@
-"use strict";
-
-const app = require("./app");
 const http = require("http");
+const app = require("./app");
 
 // create instance from http
 const server = http.createServer(app);
@@ -31,6 +29,6 @@ server.on("error", (err) => {
             process.exit(1);
             break;
         default:
-            throw error;
+            throw err;
     }
 });
