@@ -7,7 +7,7 @@ const commonConfig = {
     },
     app: {
         port: parseInt(process.env.PORT) || 5000,
-        debug: process.env.DEBUGGER.toLowerCase() === "true" ? true : false,
+        debug: process.env.DEBUGGER?.toLowerCase() === "true" ? true : false,
         logger_format: process.env.LOGGER_FORMAT || "combined",
     },
 };
@@ -35,4 +35,4 @@ config.set(testConfig.name, testConfig);
 const fallback = "production";
 
 module.exports = (env) =>
-    config.has(env.toLowerCase()) ? config.get(env) : config.get(fallback);
+    config.has(env?.toLowerCase()) ? config.get(env) : config.get(fallback);
