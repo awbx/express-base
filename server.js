@@ -6,6 +6,9 @@ const http = require("http");
 // create instance from http
 const server = http.createServer(app);
 
+const ENV = app.get("config").name;
+const PORT = app.get("config").app.port;
+const DEBUGGER = app.get("config").app.debug;
 const LOGGER_FORMAT = app.get("config").app.logger_format;
 
 // start listening on port specified
