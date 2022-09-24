@@ -14,7 +14,7 @@ const LOGGER_FORMAT = app.get("config").app.logger_format;
 const BACKLOG = app.get("config").app.backlog;
 
 // start listening on port specified
-server.listen(PORT);
+server.listen(PORT, HOSTNAME, BACKLOG);
 
 server.on("listening", () => {
     console.log(`* Environment : ${ENV}`);
