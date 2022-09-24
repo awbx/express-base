@@ -2,6 +2,10 @@
 
 const app = require("./app");
 const http = require("http");
+const dns = require("dns");
+const { promisify } = require("util");
+
+const lookupService = promisify(dns.lookupService);
 
 // create instance from http
 const server = http.createServer(app);
@@ -16,11 +20,14 @@ const BACKLOG = app.get("config").app.backlog;
 // start listening on port specified
 server.listen(PORT, HOSTNAME, BACKLOG);
 
-server.on("listening", () => {
+server.on("listening", async () => {
+    let { port, address } = server.address();
+
+    let { hostname } = await lookupService(address, port);
     console.log(`* Environment : ${ENV}`);
     console.log(`* Debugger : ${DEBUGGER ? "On" : "Off"}`);
     console.log(`* Logger Format : ${LOGGER_FORMAT}`);
-    console.log(`* Running on http://localhost:${PORT} (CTRL + C to quit)`);
+    console.log(`* Running on http://${hostname}:${port} (CTRL + C to quit)`);
 });
 // handle error
 server.on("error", (err) => {
@@ -37,4 +44,11 @@ server.on("error", (err) => {
         default:
             throw error;
     }
+});
+
+process.on("SIGINT", (signal) => {
+    console.error("Exiting...");
+    server.close((err) => {
+        process.exit(130);
+    });
 });
