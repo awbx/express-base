@@ -11,6 +11,7 @@ const PORT = app.get("config").app.port;
 const HOSTNAME = app.get("config").app.hostname;
 const DEBUGGER = app.get("config").app.debug;
 const LOGGER_FORMAT = app.get("config").app.logger_format;
+const BACKLOG = app.get("config").app.backlog;
 
 // start listening on port specified
 server.listen(PORT);
