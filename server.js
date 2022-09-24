@@ -6,9 +6,7 @@ const http = require("http");
 // create instance from http
 const server = http.createServer(app);
 
-const PORT = app.get("port");
-const ENV = app.get("env");
-const DEBUGGER = app.get("debugger");
+const LOGGER_FORMAT = app.get("config").app.logger_format;
 
 // start listening on port specified
 server.listen(PORT);
@@ -16,6 +14,7 @@ server.listen(PORT);
 server.on("listening", () => {
     console.log(`* Environment : ${ENV}`);
     console.log(`* Debugger : ${DEBUGGER ? "On" : "Off"}`);
+    console.log(`* Logger Format : ${LOGGER_FORMAT}`);
     console.log(`* Running on http://localhost:${PORT} (CTRL + C to quit)`);
 });
 // handle error
