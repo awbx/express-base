@@ -12,19 +12,19 @@ const homeRouter = require("./routes/homeRouter");
 
 // inlcude .env  variables
 require("dotenv").config("../.env");
+
+const config = require("../config/settings");
+
 const {
-    name,
     corsOptions,
-    app: { port, debug, logger_format },
-} = require("../config/settings");
+    app: { debug, logger_format },
+} = config;
 
 // create instance from express
 const app = express();
 
 // set express variables
-app.set("port", port);
-app.set("env", name);
-app.set("debugger", debug);
+app.set("config", config);
 
 // initialize middlewares
 app.use(helmet());
