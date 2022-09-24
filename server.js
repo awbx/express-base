@@ -8,6 +8,7 @@ const server = http.createServer(app);
 
 const ENV = app.get("config").name;
 const PORT = app.get("config").app.port;
+const HOSTNAME = app.get("config").app.hostname;
 const DEBUGGER = app.get("config").app.debug;
 const LOGGER_FORMAT = app.get("config").app.logger_format;
 

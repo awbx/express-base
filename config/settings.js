@@ -7,6 +7,7 @@ const commonConfig = {
     },
     app: {
         port: parseInt(process.env.PORT) || 5000,
+        hostname: process.env.HOSTNAME || "localhost",
         debug: process.env.DEBUGGER?.toLowerCase() === "true" ? true : false,
         logger_format: process.env.LOGGER_FORMAT || "combined",
     },
