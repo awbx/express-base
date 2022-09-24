@@ -12,12 +12,11 @@ const homeRouter = require("./routes/homeRouter");
 
 // inlcude .env  variables
 require("dotenv").config("../.env");
-const env = process.env.NODE_ENV;
 const {
     name,
     corsOptions,
     app: { port, debug, logger_format },
-} = require("../config/settings")(env);
+} = require("../config/settings");
 
 // create instance from express
 const app = express();
